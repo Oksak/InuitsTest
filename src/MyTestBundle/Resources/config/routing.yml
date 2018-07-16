@@ -1,0 +1,7 @@
+my_test_post:
+    resource: "@MyTestBundle/Resources/config/routing/post.yml"
+    prefix:   /view
+
+my_test_homepage:
+    path:     /
+    defaults: { _controller: MyTestBundle:Default:index }
