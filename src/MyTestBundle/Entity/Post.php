@@ -42,7 +42,18 @@ class Post
      */
     private $description;
 
+    /**
+     * @var srting
+     * @ORM\Column(name="slogan", type="text")
+     */
+    private $slogan;
 
+    /**
+     * @var string
+     * @ORM\Column(name="number", type="integer")
+     */
+
+    private $number;
     /**
      * Get id
      *
@@ -123,6 +134,30 @@ class Post
     public function getDescription()
     {
         return $this->description;
+    }
+
+    public function getSlogan()
+    {
+       return $this->slogan;
+    }
+
+    public function setSlogan($slogan)
+    {
+        $this->slogan=$slogan;
+
+        return $this;
+    }
+
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    public function setNumber($number)
+    {
+     $this->number=$number;
+
+     return $this;
     }
 }
 

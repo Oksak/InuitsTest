@@ -3,10 +3,15 @@
 {% block body %}
 
     <h1>Post creation</h1>
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+    {{ form_start(form, {'attr' : { 'class':'form-horizontal' }}) }}
+        {#{{ form_widget(form) }}#}
+        {{ form_row(form.username, {'attr' : { 'class':'form-control' }}) }}
+        {{ form_row(form.title, {'attr' : { 'class':'form-control' }}) }}
+        {{ form_row(form.description, {'attr' : { 'class':'form-control' }}) }}
+        {{ form_row(form.slogan, {'attr' : { 'class':'form-control' }}) }}
+        {{ form_row(form.number, {'attr' : { 'class':'form-control' }}) }}
+            <input type="submit" value="Create" />
+        {{ form_end(form) }}
     <ul>
         <li>
             <a href="{{ path('post_index') }}">Back to the list</a>

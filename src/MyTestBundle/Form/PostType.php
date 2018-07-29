@@ -5,6 +5,8 @@ namespace MyTestBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class PostType extends AbstractType
 {
@@ -18,9 +20,17 @@ class PostType extends AbstractType
             ->add('username')
             ->add('title')
             ->add('description')
-        ;
+            ->add('slogan', TextareaType::class, array(
+                'label' => 'Test slogan',
+            ))
+            ->add('number',NumberType::class, array(
+                'label' => 'Number'
+            ));
+
+
+
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */
